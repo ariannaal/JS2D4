@@ -55,7 +55,7 @@ estraiElement.addEventListener("click", function (event) {
 
 
 
-
+//faccio lo stesso per crearmi la tabellina
 
 function tabellina() {
     const littleTable = document.getElementById("tabellina");
@@ -83,3 +83,31 @@ function tabellina() {
 }
 
 tabellina();
+
+
+const estraiElementTabellina = document.getElementById("littleBtnExtract");
+const numeroEstrattoTabellina = document.getElementById("numeroEstrattoTabellina")
+
+//devo crearmi l'addEventListener click
+estraiElementTabellina.addEventListener("click", function (event) {
+    event.preventDefault()
+    console.log(event);
+
+    //devo generare un numero casuale da 1 a 76
+    const numeroRandomTabellina = Math.floor(Math.random() * 76) + 1;
+
+    //devo fare in modo che il numero estratto venga mostrato nello span #numeroEstrattoTabellina
+    numeroEstrattoTabellina.textContent = numeroRandomTabellina;
+ 
+    const celleElementsTabellina = document.querySelectorAll(".cellaTabellina");
+  
+    celleElementsTabellina.forEach(cellaTabellina => {
+        if (Number.parseInt(cellaTabellina.firstChild.innerText) === numeroRandomTabellina) {
+
+            //console.log("il numero estratto è: ", numeroRandom);
+            cellaTabellina.style.background = "rgb(187, 41, 41)";
+            cellaTabellina.style.color= "white";
+        }
+});
+
+    });
