@@ -47,7 +47,7 @@ estraiElement.addEventListener("click", function (event) {
         if (Number.parseInt(cella.firstChild.innerText) === numeroRandom) {
             //console.log("Sono qui ", numeroRandom);
             cella.style.background = "rgb(187, 41, 41)";
-            cella.style.color = "white";
+            cella.style.color= "white";
         }
     });
 
