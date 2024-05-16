@@ -45,7 +45,7 @@ estraiElement.addEventListener("click", function (event) {
   
     celleElements.forEach(cella => {
         if (Number.parseInt(cella.firstChild.innerText) === numeroRandom) {
-            //console.log("Sono qui ", numeroRandom);
+            //console.log("il numero estratto è: ", numeroRandom);
             cella.style.background = "rgb(187, 41, 41)";
             cella.style.color= "white";
         }
@@ -56,3 +56,30 @@ estraiElement.addEventListener("click", function (event) {
 
 
 
+
+function tabellina() {
+    const littleTable = document.getElementById("tabellina");
+
+    for (let i = 0; i < 24; i++) {
+        
+        const numberCellTabellina = document.createElement("div"); // <div></div>
+        
+    
+        numberCellTabellina.classList.add("cellaTabellina");
+
+     
+        const cellContentTabellina = document.createElement("h3"); // <h3></h3>
+        
+       
+        const randomNumber = Math.floor(Math.random() * 76) + 1;
+        cellContentTabellina.innerText = randomNumber;
+        cellContentTabellina.classList.add("numeroTabellina");
+
+       
+        numberCellTabellina.appendChild(cellContentTabellina);
+        
+        littleTable.appendChild(numberCellTabellina);
+    }
+}
+
+tabellina();
